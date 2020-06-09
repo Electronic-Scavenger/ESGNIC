@@ -1,0 +1,84 @@
+{{ template "header" . }}
+<body class="d-flex flex-column h-100">
+{{ template "nav".}}
+<!-- Begin page content -->
+<main role="main" class="flex-shrink-0">
+    <div class="container">
+        <h1 class="mt-5">网络信息</h1>
+        {{/* 系统信息*/}}
+        <div class="card mt-3">
+            <div class="card-header bg-info">网络信息</div>
+            <div class="card-body">
+                <table class="table table-hover table-striped">
+                    <tr>
+                        <td width="200">Zerotier ID</td>
+                        <td><code>8bd5124fd62826b5</code></td>
+                    </tr>
+                    <tr>
+                        <td>ASN</td>
+                        <td><code>1245643</code></td>
+                    </tr>
+                    <tr>
+                        <td>Whois服务器</td>
+                        <td><code>whois.example.com</code></td>
+                    </tr>
+                    <tr>
+                        <td>DNS</td>
+                        <td><code>1.2.5.5</code></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="card-footer text-right">
+                <button class="btn btn-primary">申请ASN</button>
+            </div>
+        </div>{{/* 系统信息*/}}
+
+        {{/* IPv4 */}}
+        <div class="card mt-3">
+            <div class="card-header bg-info">IPv4</div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th style="min-width: 170px">网段</th>
+                            <th style="min-width: 300px">信息</th>
+                            <th style="min-width: 175px">操作</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>192.168.0.0/24</td>
+                            <td>
+                                <p>netname:</p>
+                                <p>email:</p>
+                                <p>最后修改时间：12131231312313</p>
+                            </td>
+                            <td >
+                                <button class="btn btn-sm btn-danger">释放网络</button>
+                                <button class="btn btn-sm btn-info">编辑信息</button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="card-footer">
+                <button class="btn float-right btn-success">申请IP</button>
+            </div>
+        </div>
+        {{/* IPv4 */}}
+
+
+        {{/* IPv6 */}}
+        {{/* IPv6 */}}
+    </div>
+</main>
+
+<footer class="footer mt-auto py-3">
+    <div class="container">
+        <span class="text-muted">Place sticky footer content here.</span>
+    </div>
+</footer>
+</body>
+{{ template "footer" . }}

@@ -1,0 +1,49 @@
+{{ template "header" . }}
+<body class="d-flex flex-column h-100">
+{{ template "nav".}}
+<!-- Begin page content -->
+<main role="main" class="flex-shrink-0">
+    <div class="container">
+        <h1 class="mt-5">个人信息</h1>
+        {{/* 个人信息*/}}
+        <div class="card mt-3">
+            <div class="card-header bg-info">个人信息</div>
+            <div class="card-body">
+                <table class="table table-hover table-striped">
+                    <tr>
+                        <td>组织名（昵称）</td>
+                        <td><span class="text-info">Electronic Scavenger Group Network Information Center</span></td>
+                    </tr>
+                    <tr>
+                        <td>QQ号</td>
+                        <td><code>123596455</code></td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td><code>123596455@xxx.com</code></td>
+                    </tr>
+                    <tr>
+                        <td>手机号</td>
+                        <td><code>123596455</code></td>
+                    </tr>
+                    <tr>
+                        <td>ASN</td>
+                        <td><code>1245643</code></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="card-footer">
+                <button class="btn btn-danger">注销账户</button>
+                <button class="float-right btn btn-info">编辑信息</button>
+            </div>
+        </div>{{/* 个人信息*/}}
+    </div>
+</main>
+
+<footer class="footer mt-auto py-3">
+    <div class="container">
+        <span class="text-muted">Place sticky footer content here.</span>
+    </div>
+</footer>
+</body>
+{{ template "footer" . }}
