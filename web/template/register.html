@@ -5,6 +5,7 @@
     body {
         height: 100%;
     }
+
     body {
         display: -ms-flexbox;
         display: flex;
@@ -65,20 +66,36 @@
         }
     }
 </style>
-<form class="form-signin">
+<form class="form-signin" onsubmit="return register()">
     <img class="mb-4" src="/static/img/main.jpg" alt="" width="72" height="72">
-    <h1 class="h3 mb-3 font-weight-normal">请登录</h1>
+    <h1 class="h3 mb-3 font-weight-normal">注册账户</h1>
 
-    <label for="qq" class="sr-only">用户名</label>
-    <input type="text" id="qq" class="form-control" placeholder="QQ" required autofocus>
+    <label for="qq" class="sr-only">QQ</label>
+    <input type="text" id="qq" class="form-control" placeholder="QQ号" required autofocus>
 
     <label for="password" class="sr-only">密码</label>
     <input type="password" id="password" class="form-control" placeholder="密码" required>
 
-    <button class="btn btn-lg btn-primary btn-block" type="submit">登录</button>
-    <a href="/register" class="btn btn-lg btn-outline-info btn-block">注册</a>
+
+    <button class="btn btn-lg btn-info btn-block" type="submit">注册</button>
+    <a href="/login" class="btn btn-lg btn-outline-primary btn-block">登录</a>
 
     <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
 </form>
+<script>
+    function register() {
+        let qq = $("#qq").val()
+        let password = $("#password").val()
+        axios.post("/register", {
+            qq: qq,
+            password: password,
+        }).then(function (response) {
+            alert("注册成功")
+        }).catch(function (error) {
+            alert(error.response.data)
+        })
+        return false
+    }
+</script>
 </body>
 {{ template "footer" . }}

@@ -19,6 +19,15 @@ var routes = Routes{
 		Name: "Login", Method: http.MethodGet, Pattern: "/login", HandlerFunc: Login,
 	},
 	Route{
+		Name: "Register", Method: http.MethodGet, Pattern: "/register", HandlerFunc: Register,
+	},
+	Route{
+		Name: "RegisterAction", Method: http.MethodPost, Pattern: "/register", HandlerFunc: RegisterAction,
+	},
+	Route{
+		Name: "Index", Method: http.MethodGet, Pattern: "/", HandlerFunc: Index,
+	},
+	Route{
 		Name: "Index", Method: http.MethodGet, Pattern: "/index", HandlerFunc: Index,
 	},
 	Route{
