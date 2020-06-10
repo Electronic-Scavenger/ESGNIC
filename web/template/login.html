@@ -65,7 +65,7 @@
         }
     }
 </style>
-<form class="form-signin">
+<form class="form-signin" onsubmit="return login()">
     <img class="mb-4" src="/static/img/main.jpg" alt="" width="72" height="72">
     <h1 class="h3 mb-3 font-weight-normal">请登录</h1>
 
@@ -80,5 +80,20 @@
 
     <p class="mt-5 mb-3 text-muted">&copy; 2020</p>
 </form>
+<script>
+    function login() {
+        let qq = $("#qq").val()
+        let password = $("#password").val()
+        axios.post("/login", {
+            qq: qq,
+            password: password,
+        }).then(function (response) {
+            location.href = "/"
+        }).catch(function (error) {
+            alert(error.response.data)
+        })
+        return false
+    }
+</script>
 </body>
 {{ template "footer" . }}

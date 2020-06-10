@@ -31,6 +31,11 @@ func getCommonTemplate(filename string) (*template.Template, error) {
 }
 
 func Index(w http.ResponseWriter, r *http.Request) {
+	userinfo := auth(w, r)
+	if userinfo == nil {
+		return
+	}
+
 	t, err := getCommonTemplate("web/template/index.html")
 	if err != nil {
 		fmt.Println(err)
