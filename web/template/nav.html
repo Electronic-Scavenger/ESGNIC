@@ -19,10 +19,19 @@
             </ul>
             <ul class="navbar-nav mr-0">
                 <li class="nav-item">
-                    <button class="btn btn-link text-white-50 my-2 my-sm-0">退出</button>
+                    <button class="btn btn-link text-white-50 my-2 my-sm-0" onclick="logout()">退出</button>
                 </li>
             </ul>
         </div>
     </nav>
 </header>
+    <script>
+        function logout() {
+            axios.post("/logout", {}).then(function (response) {
+                location.href = "/login"
+            }).catch(function (error) {
+                alert(error.response.data)
+            })
+        }
+    </script>
 {{end}}
